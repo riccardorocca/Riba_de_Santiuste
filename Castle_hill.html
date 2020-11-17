@@ -14,11 +14,10 @@
 
   <div class="buttons">
     <button id="keyA">Map</button>
-    <img src="https://riccardorocca.github.io/Riba_de_Santiuste/Legend.png" width="160" height="84"></img>
     <button id="keyC1">Satellite</button>
     <button id="keyC2">Facies</button>
     <button id="keyC3">B&W</button>
-    <br>
+    <img id="legend" hidden src="https://riccardorocca.github.io/Riba_de_Santiuste/Legend.png" width="160" height="84"></img>
     <button id="keyD">Faults</button>
     <button id="keyE">Scalebar</button>
     <button id="keyF">Background Info</button>
@@ -29,7 +28,6 @@
     var model = '3e374c79347b410b8140687b7f8936fa',
 
     // Buttons
-    buttonA = document.getElementById( 'keyA' ),
     buttonC1 = document.getElementById( 'keyC1' ),
     buttonC2 = document.getElementById( 'keyC2' ),
     buttonC3 = document.getElementById( 'keyC3' ),
@@ -127,6 +125,7 @@
                 buttonC1.style.backgroundColor = "#1caad9";
                 buttonC2.style.backgroundColor = "#888888";
                 buttonC3.style.backgroundColor = "#888888";
+                document.getElementById("legend").style.display = "none";
                 api.updateTexture('https://riccardorocca.github.io/Riba_de_Santiuste/Topo_texture.jpg', texture_Topo, function(err, texture_Topo) {});
               });
 
@@ -134,6 +133,7 @@
                 buttonC1.style.backgroundColor = "#888888";
                 buttonC2.style.backgroundColor = "#1caad9";
                 buttonC3.style.backgroundColor = "#888888";
+                document.getElementById("legend").style.display = "block";
                 api.updateTexture('https://riccardorocca.github.io/Riba_de_Santiuste/Facies_texture.jpg', texture_Topo, function(err, texture_Topo) {});
               });
 
@@ -141,6 +141,7 @@
                 buttonC1.style.backgroundColor = "#888888";
                 buttonC2.style.backgroundColor = "#888888";
                 buttonC3.style.backgroundColor = "#1caad9";
+                document.getElementById("legend").style.display = "none";
                 api.updateTexture('https://riccardorocca.github.io/Riba_de_Santiuste/Gray_texture.jpg', texture_Topo, function(err, texture_Topo) {});
               });
             }
