@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div class="ratio">
+    <iframe class="ratio-inner" src="Ciao"</iframe>
+  </div>
+
+  <div class="buttons">
+    <button id="key0">UAM project C_018.20_INN</button>
+  </div>
+
+  <script>
+
+
+/*
+    $("myframe").on('mousedown', function() {$('#hide_button').hide();});
+    $("myframe").on('mouseup',   function() {$('#hide_button').show();});
+*/
+
+  var timeout = null
+  $(document).on('mousedown', function() {
+      if (timeout !== null) {
+         $('#key0').hide();
+          clearTimeout(timeout);
+      }
+
+      timeout = setTimeout(function() {
+           $('#key0').show();
+      }, 1000);
+  });
+
+  </script>
+
+  <style type="text/css">
+    .ratio{
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .ratio-inner {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .buttons {
+      width: 160px;
+      margin: 3px 50px;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      position: absolute;
+    }
+
+    button {
+      width: 100%;
+      height: 25px;
+      line-height: 21px;
+      color: white;
+      opacity: 0.8;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      vertical-align: middle;
+      display: block;
+      margin-top: 2px;
+      background: #1caad9;
+    }
+
+    #key0 {background: #0000FF; font-size: x-small; margin-bottom: 10px;}
+
+  </style>
+
+</body>
+</html>
