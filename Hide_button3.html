@@ -12,7 +12,7 @@
 <body>
   <iframe style="position:fixed; width:100%; height:100%; border:0" src="" id="api-frame" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" allow="autoplay; fullscreen; vr" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-  <div class="buttons">
+  <div id="buttons" class="buttons">
     <button id="key0">UAM project C_018.20_INN</button>
     <button id="keyA">West map</button>
     <button id="keyB"> East map </button>
@@ -32,6 +32,7 @@
 
     // Buttons
     buttonA = document.getElementById( 'keyA' ),
+    buttons = document.getElementById( 'buttons' ),
     buttonB = document.getElementById( 'keyB' ),
     buttonC1 = document.getElementById( 'keyC1' ),
     buttonC2 = document.getElementById( 'keyC2' ),
@@ -46,16 +47,34 @@
     iframe = document.getElementById( 'api-frame' ),
     client = new Sketchfab( version, iframe ),
 
+
+
     error = function () {
       console.error( 'Sketchfab API Error!' );
     },
 
     success = function( api ) {
+
       api.start();
       // Wait for viewer to be ready
       api.addEventListener( 'viewerready', function() {
+
         api.hideAnnotation(0);
         api.hideAnnotation(1);
+
+        api.addEventListener('mousedown', function() {
+          document.getElementById("buttons").style.display = "none";
+        });
+
+/*
+        api.addEventListener('camerastart', function() {
+          document.getElementById("buttons").style.display = "none";
+        });
+
+        api.addEventListener('camerastop', function() {
+          document.getElementById("buttons").style.display = "block";
+        });
+*/
 
         // Get the object nodes
         api.getNodeMap( function ( err, nodes ) {
