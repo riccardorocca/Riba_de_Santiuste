@@ -54,8 +54,8 @@
       api.start();
       // Wait for viewer to be ready
       api.addEventListener( 'viewerready', function() {
-        api.hideAnnotation(0);
-        api.hideAnnotation(1);
+        //api.hideAnnotation(0);
+        //api.hideAnnotation(1);
 
         // Get the object nodes
         api.getNodeMap( function ( err, nodes ) {
@@ -89,7 +89,7 @@
             }
 
             if ( node_BasemapE ) {
-              api.hide(node_BasemapE);
+              //api.hide(node_BasemapE);
               // Add button event
               buttonB.addEventListener( 'click', function() {
                 switch(buttonB.innerHTML) {
