@@ -144,6 +144,7 @@
 
         new mapboxgl.Popup({closeButton: false})
         .setLngLat(coordinates)
+        .setHTML(title)
         .addTo(map);
       });
 
