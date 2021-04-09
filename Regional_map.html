@@ -103,9 +103,9 @@
       );
       map.setLayoutProperty('Satellitar_Google', 'visibility', 'none');
 
-      map.loadImage('https://riccardorocca.github.io/Riba_de_Santiuste/star_green.png', function (error, image) {
+      map.loadImage('https://riccardorocca.github.io/Riba_de_Santiuste/star_blue.png', function (error, image) {
         if (error) throw error;
-        map.addImage('star_grn', image);
+        map.addImage('star_blu', image);
       });
 
       map.addSource('places', {
@@ -113,7 +113,7 @@
         'data': {
           'type': 'FeatureCollection',
           'features': [
-            {'type':'Feature','geometry':{'type':'Point','coordinates':[-2.7078015109288502,41.195435789110135]},'properties':{'icon':'star_grn','title':"Riba de Santiuste"}},
+            {'type':'Feature','geometry':{'type':'Point','coordinates':[-2.7078015109288502,41.195435789110135]},'properties':{'icon':'star_blu','title':"Riba de Santiuste"}},
           ]
         }
       });
