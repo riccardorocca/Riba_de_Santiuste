@@ -68,7 +68,7 @@
         container: 'map',
         style: 'mapbox://styles/ricroc/cknaxbapn07ds18n4vhp0vbun',
         center: [-2.7578605426574243, 41.194994787937205],
-        zoom: 11.5
+        zoom: 12
     });
 
     //map.setLayoutProperty('Piacenza Mura Archistorica', 'visibility', 'none');
@@ -85,6 +85,9 @@
     map.addControl(new mapboxgl.NavigationControl());
 
     map.on('load', function () {
+
+      map.setLayoutProperty('RibaDeSantiuste_Geologia', 'visibility', 'visible');
+      button1.className = 'active';
 
       map.addSource('google-source', {
         'type': 'raster',
